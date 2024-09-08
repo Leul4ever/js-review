@@ -142,11 +142,19 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+
 // Destructuring 
-const books=getBook(2);
-const title= books.title;
-const author=books.author
-title
-author
-console.log(title,author)
+const book=getBook(2);
+// const title= books.title;
+// const author=books.author
+const{title,author,pages,publicationDate,genres,hasMovieAdaptation}=book;
+// const primaryGenre=genres[0];
+// const secondaryGenre=genres[1];
+
+const  [primaryGenre,secondaryGenre]=genres;
+
+console.log(primaryGenre,secondaryGenre)
+
+console.log(author,title, genres);
+
 
