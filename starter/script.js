@@ -182,5 +182,18 @@ console.log(author,title, genres);
 const summary = `${title},a ${pages}-page long book, was written by ${author},and published in ${getYear(publicationDate)}`
 summary
 
+const spanishTranslation =book.translations.spanish && " Not Translated";
+spanishTranslation
+const count =book.reviews.librarything.reviewsCount ?? "no data ";
+count
+function getTotalReviewCount(book){
+  const goodreads=book.reviews.goodreads.reviewsCount;
+  const librarything=book.reviews.librarything.reviewsCount;
+  
 
+
+
+
+
+}
 
