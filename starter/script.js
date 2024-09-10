@@ -140,8 +140,8 @@ function getBooks() {
 }
 
 
-function getBook(id) {
-  return data.find((d) => d.id === id);
+function getBook(id){
+  return data.find((d)=>d.id===id);
 }
 
 // Destructuring 
@@ -161,6 +161,15 @@ console.log(updatedBook);  // Now the pages should be 1210
 
 updatedBook
 
+// traditional method of writing a function 
+
+// function getYear(sty){ // this is function declaration 
+//   return sty.split("_"[0]);
+
+
+// }
+const getYear=(str)=>str.split("-"[0]); // this function expression 
+console.log(getYear(publicationDate));
 
 // const primaryGenre=genres[0];
 // const secondaryGenre=genres[1];
@@ -169,5 +178,9 @@ const newGenre=["leul",...genres];// this is spread operator
 console.log(newGenre);
 console.log(primaryGenre,secondaryGenre,otherGenre)
 console.log(author,title, genres);
+
+const summary = `${title},a ${pages}-page long book, was written by ${author},and published in ${getYear(publicationDate)}`
+summary
+
 
 
