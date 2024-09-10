@@ -144,6 +144,7 @@ function getBook(id){
   return data.find((d)=>d.id===id);
 }
 
+/*
 // Destructuring 
 const book=getBook(1);
 book
@@ -188,12 +189,45 @@ const count =book.reviews.librarything.reviewsCount ?? "no data ";
 count
 function getTotalReviewCount(book){
   const goodreads=book.reviews.goodreads.reviewsCount;
-  const librarything=book.reviews.librarything.reviewsCount;
-  
-
-
-
-
-
+  const librarything=book.reviews?.librarything?.reviewsCount??0;
+  librarything;
+  return goodreads+librarything;
 }
+console.log(getTotalReviewCount(book))
+*/
+const books = getBooks();
+books
+const ar =[1,2,3,4,5];
+const arr=ar.map((e)=>e+2);
+arr
+const titles= books.map((book)=>book.title);
+titles
+const author= books.map((book)=>book.author);
+author
+function getTotalReviewCount(book){
+  const goodreads=book.reviews.goodreads.reviewsCount;
+  const librarything=book.reviews?.librarything?.reviewsCount??0;
+  librarything;
+  return goodreads+librarything;
+}
+//  map method 
+const essentialData=books.map((book)=>({
+  titles:book.title,
+  author:book.author,
+  reviewsCount:getTotalReviewCount(book),
+
+
+}));
+essentialData
+// filter method 
+const longBooksWithMovie= books
+.filter((book)=>book.pages>500).filter((book)=>book.hasMovieAdaptation)
+longBooksWithMovie
+
+const adventureBooks=books
+.filter((books)=>books.genres.includes("adventure"))
+.map((book)=>book.title);
+adventureBooks
+
+
 
