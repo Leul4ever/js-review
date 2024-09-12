@@ -239,10 +239,24 @@ sortPageNumber = books.slice().sort((a,b)=>books.a-books.b)
 sortPageNumber
 
 
+// add  book object to array
+const newBook={
+  id:6,
+  title:"Harry potter and Chamber of Secrete ",
+  author:"J. K. Rowling"
+  
+}
+const booksAfterAdd=[...books,newBook];
+booksAfterAdd;
+
+// Delete a book object for  the array 
+const booksAfterDelete=booksAfterAdd.filter((book)=>book.id !==3);
+booksAfterDelete
 
 
-
-
+//books After Delete
+const booksAfterUpdate=booksAfterDelete.map((book)=>book.id===1 ? {...book, pages:120}:book);
+booksAfterUpdate
 
 
 
